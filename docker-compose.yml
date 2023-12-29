@@ -11,7 +11,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - VPN_SERVICE_PROVIDER=${VPN_SERVICE_PROVIDER:-custom} # Valid values: nordvpn, expressvpn, protonvpn, surfshark or custom
+      - VPN_SERVICE_PROVIDER=${VPN_SERVICE_PROVIDER:-private internet access} # Valid values: nordvpn, expressvpn, protonvpn, surfshark or custom
       - OPENVPN_USER=${OPENVPN_USER:-""}
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD:-""}
 
@@ -25,7 +25,7 @@ services:
       - VPN_TYPE=openvpn # or wireguard. 
 
       ## If VPN_TYPE is openvpn
-      - OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
+      #- OPENVPN_CUSTOM_CONFIG=/gluetun/custom.conf
 
       ## If VPN_TYPE is wireguard. Replace below env variables as required.
       # - VPN_ENDPOINT_IP=1.2.3.4                                               # Replace with your wg endpoint ip or domain
@@ -37,7 +37,7 @@ services:
 
     ## Enable volume if VPN_SERVICE_PROVIDER=custom and VPN_TYPE=openvpn is used
     # volumes:
-      - /yourpath/yourconfig.conf:/gluetun/config.conf:ro
+    #  - /yourpath/yourconfig.conf:/gluetun/config.conf:ro
 
     networks:
       - primary
