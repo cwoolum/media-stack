@@ -128,8 +128,8 @@ services:
       - vpn                   # Uncomment this line if vpn is enabled
     network_mode: service:vpn # Uncomment this line if vpn is enabled
 
-    networks:               # Comment this line if vpn is enabled
-      - primary           # Comment this line if vpn is enabled
+    #networks:               # Comment this line if vpn is enabled
+    #  - primary           # Comment this line if vpn is enabled
     environment:
       - PUID=1000
       - PGID=1000
