@@ -79,10 +79,10 @@ services:
       - torrent-downloads:/downloads
 
     ## Comment/Disable below ports if VPN is enabled
-    ports:
-      - 5080:5080
-      - 6881:6881
-      - 6881:6881/udp
+    #ports:
+    #  - 5080:5080
+    #  - 6881:6881
+    #  - 6881:6881/udp
     restart: "unless-stopped"
 
   radarr:
