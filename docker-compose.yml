@@ -63,8 +63,8 @@ services:
       - vpn                   # Uncomment this line if vpn is enabled
 
     # Comment below lines if VPN is enabled
-    networks:               # Comment this line if vpn is enabled
-      - primary           # Comment this line if vpn is enabled
+    #networks:               # Comment this line if vpn is enabled
+    #  - primary           # Comment this line if vpn is enabled
 
     # Unomment below line if vpn is enabled
     network_mode: service:vpn
