@@ -19,5 +19,5 @@ volumes:
   letsencrypt:
 
 networks:
-  mynetwork:
+  primary:
     external: true
