@@ -87,7 +87,7 @@ services:
 
   radarr:
     container_name: radarr
-    image: lscr.io/linuxserver/radarr:5.0.3
+    image: lscr.io/linuxserver/radarr:5.2.6
     networks:
       primary:
         ipv4_address: ${RADARR_STATIC_CONTAINER_IP} # It should be available IPv4 address in range of docker network `primary` e.g. 172.20.0.2
