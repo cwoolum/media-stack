@@ -197,6 +197,20 @@ services:
       - plex/config:/config
       - torrent-downloads:/data
     restart: unless-stopped
+
+  plex-meta-manager:
+    image: meisnate12/plex-meta-manager
+    container_name: plex-meta-manager
+    environment:
+      - TZ=UTC
+      #- PMM_OVERLAYS_ONLY=true #Tells PMM to run overlays only
+      - PMM_CONFIG=/config/config.yml
+      - PMM_RUN=true #Runs PMM Immediately
+      #- PMM_RUN_LIBRARIES=Movies #Tells PMM to process only a library called "Movies"
+    volumes:
+      - plex-meta-manager/config:/config
+      
+    restart: unless-stopped
   
   # Doc: https://github.com/navilg/cleanmyarr
   # cleanmyarr:
