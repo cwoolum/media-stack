@@ -213,6 +213,7 @@ services:
       - KOMETA_TIMES=6:00,18:00
     volumes:
       - ./kometa:/config
+      - torrent-downloads:/downloads
     restart: unless-stopped
   
   # Doc: https://github.com/navilg/cleanmyarr
