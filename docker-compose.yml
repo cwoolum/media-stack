@@ -202,18 +202,17 @@ services:
       - torrent-downloads:/data
     restart: unless-stopped
 
-  plex-meta-manager:
-    image: meisnate12/plex-meta-manager
-    container_name: plex-meta-manager
+  kometa:
+    image: kometateam/kometa:nightly
+    container_name: kometa
+    hostname: kometa
     environment:
-      - TZ=UTC
-      #- PMM_OVERLAYS_ONLY=true #Tells PMM to run overlays only
-      - PMM_CONFIG=/config/config.yml
-      - PMM_RUN=true #Runs PMM Immediately
-      #- PMM_RUN_LIBRARIES=Movies #Tells PMM to process only a library called "Movies"
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Central
+      - KOMETA_TIMES=6:00,18:00
     volumes:
-      - plex-meta-manager/config:/config
-      
+      - /kometa:/config
     restart: unless-stopped
   
   # Doc: https://github.com/navilg/cleanmyarr
