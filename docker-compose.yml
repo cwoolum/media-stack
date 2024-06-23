@@ -146,6 +146,10 @@ services:
     # DockerHub mirror flaresolverr/flaresolverr:latest
     image: ghcr.io/flaresolverr/flaresolverr:latest
     container_name: flaresolverr
+    
+    networks:
+      - primary
+      
     depends_on:               # Uncomment this line if vpn is enabled
       - vpn                   # Uncomment this line if vpn is enabled
     network_mode: service:vpn
