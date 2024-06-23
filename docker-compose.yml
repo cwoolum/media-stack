@@ -198,7 +198,7 @@ services:
     devices:
      - /dev/dri:/dev/dri #Required for plex HW transcoding / QuickSync
     volumes:
-      - plex/config:/config
+      - plex-config:/config
       - torrent-downloads:/data
     restart: unless-stopped
 
