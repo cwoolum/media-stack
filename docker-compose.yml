@@ -209,7 +209,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=US/Central
+      - TZ=US/Pacofic
       - KOMETA_TIMES=6:00,18:00
     volumes:
       - ./kometa:/config
