@@ -253,6 +253,7 @@ volumes:
   prowlarr-config:
   jellyfin-config:
   qbittorrent-config:
+  plex-config:
   # cleanmyarr-config:
 
 networks:
