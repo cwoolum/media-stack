@@ -182,25 +182,25 @@ services:
       - 8920:8920
     restart: unless-stopped
 
-  #plex:
-  #  image: lscr.io/linuxserver/plex:latest
-  #  container_name: plex
-  #  networks:
-  #    - primary
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - TZ=UTC
-  #    - VERSION=docker
-  #    - PLEX_CLAIM=${PLEX_CLAIM}
-  #  ports:
-  #    - 32400:32400
-  #  devices:
-  #   - /dev/dri:/dev/dri #Required for plex HW transcoding / QuickSync
-  #  volumes:
-  #    - plex-config:/config
-  #    - torrent-downloads:/data
-  #  restart: unless-stopped
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    networks:
+      - primary
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM}
+    ports:
+      - 32400:32400
+    devices:
+     - /dev/dri:/dev/dri #Required for plex HW transcoding / QuickSync
+    volumes:
+      - plex-config:/config
+      - torrent-downloads:/data
+    restart: unless-stopped
 
   plex-meta-manager:
     image: meisnate12/plex-meta-manager
@@ -254,6 +254,7 @@ volumes:
   jellyfin-config:
   qbittorrent-config:
   plex-config:
+  plex-meta-manager:
   # cleanmyarr-config:
 
 networks:
