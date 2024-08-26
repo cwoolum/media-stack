@@ -72,7 +72,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
       - WEBUI_PORT=5080
     volumes:
       - qbittorrent-config:/config
@@ -94,12 +94,13 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     ports:
       - 7878:7878
     volumes:
       - radarr-config:/config
       - torrent-downloads:/downloads
+      - /movies:/movies
     restart: "unless-stopped"
 
   sonarr:
@@ -111,10 +112,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - sonarr-config:/config
       - torrent-downloads:/downloads
+      - /tvshows:/tvshows
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -133,7 +135,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - prowlarr-config:/config
 
@@ -168,7 +170,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
     volumes:
       - jellyfin-config:/config
       - torrent-downloads:/data
@@ -188,7 +190,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=America/Los_Angeles
       - VERSION=docker
       - PLEX_CLAIM=${PLEX_CLAIM}
     ports:
@@ -207,7 +209,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=US/Pacific
+      - TZ=America/Los_Angeles
       - KOMETA_TIMES=6:00,18:00
     volumes:
       - ./kometa:/config
