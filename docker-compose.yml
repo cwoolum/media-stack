@@ -176,6 +176,8 @@ services:
     volumes:
       - jellyfin-config:/config
       - torrent-downloads:/data
+      - /tvshows:/tvshows
+      - /movies:/movies
   # devices:
    #  - /dev/videoN:/dev/videoN # Mount GPU device 
     ports:
