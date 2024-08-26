@@ -77,6 +77,8 @@ services:
     volumes:
       - qbittorrent-config:/config
       - torrent-downloads:/downloads
+      - /tvshows:/tvshows
+      - /movies:/movies
 
     ## Comment/Disable below ports if VPN is enabled
     #ports:
